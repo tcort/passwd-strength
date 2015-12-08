@@ -4,7 +4,7 @@ var fs = require('fs');
 var path = require('path');
 
 Math.log2 = Math.log2 || function(x) { // for node v0.10
-  return Math.log(x) / Math.LN2;
+    return Math.log(x) / Math.LN2;
 };
 
 module.exports  = function passwdStrength(passwd) {
