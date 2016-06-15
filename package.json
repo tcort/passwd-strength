@@ -1,6 +1,6 @@
 {
   "name": "passwd-strength",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "computes password strength and checks against a list of common passwords",
   "main": "index.js",
   "directories": {
