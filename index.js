@@ -7,9 +7,17 @@ Math.log2 = Math.log2 || function(x) { // for node v0.10
     return Math.log(x) / Math.LN2;
 };
 
-module.exports  = function passwdStrength(passwd) {
+var passwordsTxt = null;
 
-    if (fs.readFileSync(path.join(__dirname, 'passwords.txt')).toString().split("\n").indexOf(passwd.toLowerCase()) !== -1) {
+module.exports = function passwdStrength(passwd) {
+
+    passwd = '' + passwd; // ensure it's a string or our toLowerCase() below will fail.
+
+    if (passwordsTxt === null) {
+        passwordsTxt = fs.readFileSync(path.join(__dirname, 'passwords.txt')).toString().split("\n");
+    }
+
+    if (passwordsTxt.indexOf(passwd.toLowerCase()) !== -1) {
         return 0;
     }
 

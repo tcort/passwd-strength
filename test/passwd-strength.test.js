@@ -21,4 +21,9 @@ describe('passwd-strength', function () {
             expect(passwdStrength('fml123').toFixed(2)).to.be('31.02');
         });
     });
+    describe('input acceptance', function () {
+        it('should be handle reasonable non-string input', function () {
+            expect(function () { passwdStrength(1234567890); }).not.to.throwException();
+        });
+    });
 });
